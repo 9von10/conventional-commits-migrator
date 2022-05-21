@@ -1,0 +1,198 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <ol class="mb-0">
+      <li>{{ 'MIGRATOR.INFO1' | translate }}</li>
+      <li>{{ 'MIGRATOR.INFO2' | translate }}</li>
+      <li>{{ 'MIGRATOR.INFO3' | translate }}</li>
+    </ol>
+  </div>
+</div>
+
+<select class="form-select mb-3" [(ngModel)]="selectedRelease">
+  <option *ngFor="let release of dataService.releases" [ngValue]="release">
+    {{ release.name }}
+  </option>
+</select>
+
+<ng-container *ngIf="selectedRelease">
+  <div class="card mb-3" *ngFor="let commit of selectedRelease.commits">
+    <div class="card-body">
+      <p>{{ commit.timestamp * 1000 | date: 'medium' }}</p>
+
+      <input
+        type="text"
+        class="form-control mb-3"
+        [placeholder]="'MIGRATOR.SUBJECT' | translate"
+        [(ngModel)]="commit.subject"
+      />
+
+      <div class="mb-3">
+        <div class="form-check form-check-inline">
+          <input
+            [(ngModel)]="commit.type"
+            class="form-check-input"
+            type="radio"
+            [name]="'type' + commit.timestamp"
+            [id]="'type' + commit.timestamp + 'none'"
+            value="none"
+          />
+          <label class="form-check-label" [for]="'type' + commit.timestamp + 'none'"> none </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input
+            [(ngModel)]="commit.type"
+            class="form-check-input"
+            type="radio"
+            [name]="'type' + commit.timestamp"
+            [id]="'type' + commit.timestamp + 'feat'"
+            value="feat"
+          />
+          <label class="form-check-label" [for]="'type' + commit.timestamp + 'feat'"> feat </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input
+            [(ngModel)]="commit.type"
+            class="form-check-input"
+            type="radio"
+            [name]="'type' + commit.timestamp"
+            [id]="'type' + commit.timestamp + 'fix'"
+            value="fix"
+          />
+          <label class="form-check-label" [for]="'type' + commit.timestamp + 'fix'"> fix </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input
+            [(ngModel)]="commit.type"
+            class="form-check-input"
+            type="radio"
+            [name]="'type' + commit.timestamp"
+            [id]="'type' + commit.timestamp + 'docs'"
+            value="docs"
+          />
+          <label class="form-check-label" [for]="'type' + commit.timestamp + 'docs'"> docs </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input
+            [(ngModel)]="commit.type"
+            class="form-check-input"
+            type="radio"
+            [name]="'type' + commit.timestamp"
+            [id]="'type' + commit.timestamp + 'style'"
+            value="style"
+          />
+          <label class="form-check-label" [for]="'type' + commit.timestamp + 'style'">
+            style
+          </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input
+            [(ngModel)]="commit.type"
+            class="form-check-input"
+            type="radio"
+            [name]="'type' + commit.timestamp"
+            [id]="'type' + commit.timestamp + 'refactor'"
+            value="refactor"
+          />
+          <label class="form-check-label" [for]="'type' + commit.timestamp + 'refactor'">
+            refactor
+          </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input
+            [(ngModel)]="commit.type"
+            class="form-check-input"
+            type="radio"
+            [name]="'type' + commit.timestamp"
+            [id]="'type' + commit.timestamp + 'perf'"
+            value="perf"
+          />
+          <label class="form-check-label" [for]="'type' + commit.timestamp + 'perf'"> perf </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input
+            [(ngModel)]="commit.type"
+            class="form-check-input"
+            type="radio"
+            [name]="'type' + commit.timestamp"
+            [id]="'type' + commit.timestamp + 'test'"
+            value="test"
+          />
+          <label class="form-check-label" [for]="'type' + commit.timestamp + 'test'"> test </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input
+            [(ngModel)]="commit.type"
+            class="form-check-input"
+            type="radio"
+            [name]="'type' + commit.timestamp"
+            [id]="'type' + commit.timestamp + 'build'"
+            value="build"
+          />
+          <label class="form-check-label" [for]="'type' + commit.timestamp + 'build'">
+            build
+          </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input
+            [(ngModel)]="commit.type"
+            class="form-check-input"
+            type="radio"
+            [name]="'type' + commit.timestamp"
+            [id]="'type' + commit.timestamp + 'ci'"
+            value="ci"
+          />
+          <label class="form-check-label" [for]="'type' + commit.timestamp + 'ci'"> ci </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input
+            [(ngModel)]="commit.type"
+            class="form-check-input"
+            type="radio"
+            [name]="'type' + commit.timestamp"
+            [id]="'type' + commit.timestamp + 'chore'"
+            value="chore"
+          />
+          <label class="form-check-label" [for]="'type' + commit.timestamp + 'chore'">
+            chore
+          </label>
+        </div>
+      </div>
+
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="commit.scope"
+        [placeholder]="'MIGRATOR.SCOPE' | translate"
+      />
+    </div>
+  </div>
+</ng-container>
+
+<div class="margin-bottom"></div>
+
+<div class="footer fixed-bottom bg-white p-2 text-end">
+  <div class="float-start">
+    <button type="button" class="btn btn-danger" (click)="back()">
+      {{ 'MIGRATOR.BACK' | translate }}
+    </button>
+  </div>
+
+  <div class="float-end">
+    <button type="button" class="btn btn-success me-1" (click)="save()">
+      {{ 'MIGRATOR.SAVE' | translate }}
+    </button>
+    <button type="button" class="btn btn-primary" (click)="forward()">
+      {{ 'MIGRATOR.FORWARD' | translate }}
+    </button>
+  </div>
+</div>

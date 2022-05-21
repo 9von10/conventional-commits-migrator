@@ -1,5 +1,5 @@
 {
   "tsconfig": "tsconfig.doc.json",
   "output": "docs",
-  "name": "boilerplate-angular"
+  "name": "conventional-commits-migrator"
 }

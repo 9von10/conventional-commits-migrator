@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true, // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/boilerplate-angular'),
+      dir: require('path').join(__dirname, './coverage/conventional-commits-migrator'),
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'text-summary' }],
     },

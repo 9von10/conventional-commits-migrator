@@ -1,3 +1,25 @@
 {
-  "APP_TITLE": "boilerplate-angular"
+  "GITLOG": {
+    "INFO1": "Export your commit history using: <code>git log --pretty=\"%ct;%s\" > log.csv</code>",
+    "INFO2": "Add as many releases as you'd like below",
+    "INFO3": "Paste the commits into their corresponding releases",
+    "ADD": "Add release",
+    "REMOVE": "Remove this release",
+    "RELEASE": "Release name",
+    "HISTORY": "Insert commit history here",
+    "FORWARD": "Go to migrator"
+  },
+  "MIGRATOR": {
+    "INFO1": "Select release in the dropdown below",
+    "INFO2": "Fill out commits",
+    "INFO3": "Press \"Generate markdown\" (type \"none\" is ignored)",
+    "SUBJECT": "Subject",
+    "SCOPE": "Scope (optional)",
+    "BACK": "Back to git logs",
+    "SAVE": "Save",
+    "FORWARD": "Generate markdown"
+  },
+  "MARKDOWN": {
+    "BACK": "Back to migrator"
+  }
 }

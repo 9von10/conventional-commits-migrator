@@ -1,0 +1,17 @@
+<textarea class="form-control mb-3" [value]="markdown"></textarea>
+
+<div class="card">
+  <div class="card-body">
+    <p [innerHTML]="markdown | marked"></p>
+  </div>
+</div>
+
+<div class="margin-bottom"></div>
+
+<div class="footer fixed-bottom bg-white p-2 text-end">
+  <div class="float-start">
+    <button type="button" class="btn btn-danger" (click)="back()">
+      {{ 'MARKDOWN.BACK' | translate }}
+    </button>
+  </div>
+</div>

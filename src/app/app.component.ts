@@ -11,11 +11,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   /**
-   * Defines the languages that are supported by the application.
-   */
-  private readonly supportedLanguages = ['de', 'en'];
-
-  /**
    * Defines the applications default language.
    */
   private readonly defaultLanguage = 'en';
@@ -37,12 +32,6 @@ export class AppComponent {
    */
   private initializeTranslateService() {
     this.translateService.setDefaultLang(this.defaultLanguage);
-
-    const browserLanguage = this.translateService.getBrowserLang();
-    if (browserLanguage && this.supportedLanguages.includes(browserLanguage)) {
-      this.translateService.use(browserLanguage);
-    } else {
-      this.translateService.use(this.defaultLanguage);
-    }
+    this.translateService.use(this.defaultLanguage);
   }
 }

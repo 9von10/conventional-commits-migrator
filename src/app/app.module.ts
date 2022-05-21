@@ -7,6 +7,10 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MigratorComponent } from './component/migrator/migrator.component';
+import { GitLogComponent } from './component/git-log/git-log.component';
+import { MarkdownComponent } from './component/markdown/markdown.component';
+import { MarkedPipe } from './pipe/marked.pipe';
 
 /**
  * Creates a TranslateHttpLoader containing all available translations.
@@ -18,7 +22,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MigratorComponent, GitLogComponent, MarkdownComponent, MarkedPipe],
   imports: [
     BrowserModule,
     FormsModule,

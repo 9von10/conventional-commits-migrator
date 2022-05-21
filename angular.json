@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "boilerplate-angular": {
+    "conventional-commits-migrator": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "boilerplate-angular:build:production"
+              "browserTarget": "conventional-commits-migrator:build:production"
             },
             "development": {
-              "browserTarget": "boilerplate-angular:build:development"
+              "browserTarget": "conventional-commits-migrator:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "boilerplate-angular:build"
+            "browserTarget": "conventional-commits-migrator:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
       }
     }
   },
-  "defaultProject": "boilerplate-angular",
+  "defaultProject": "conventional-commits-migrator",
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }
